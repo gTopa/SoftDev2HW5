@@ -5,6 +5,8 @@ var c = document.getElementById("slate");
 var stopButton = document.getElementById( "stop" );
 var circleButton = document.getElementById( "circle" );
 var dvdButton = document.getElementById( "dvd" );
+var img1=new Image();
+img1.src = "7388.jpg"
 
 //prepare to interact with canvas in 2D
 var ctx = c.getContext("2d");
@@ -77,13 +79,13 @@ var bounce = function() {
 	ctx.clearRect( 0, 0, c.width, c.height );
 	
 	ctx.beginPath();
-	ctx.fillRect(xcor, ycor, 50,50);
+	ctx.drawImage(img1, xcor, ycor, 60,40);
 	ctx.stroke();
 	ctx.fill();
-	if(xcor==c.width-50||xcor==0){
+	if(xcor==c.width-60||xcor==0){
 	    xdir = xdir * -1;
 	};
-	if(ycor==c.height-50||ycor==0){
+	if(ycor==c.height-40||ycor==0){
 	    ydir = ydir * -1;
 	};
 	xcor+=xdir;
